@@ -1,0 +1,7 @@
+<app-nav-bar>
+  <a ngbNavLink routerLink="/wishlist">Wishlist</a>
+</app-nav-bar>
+<div>
+  <app-search-input (searchQuery)="onInputValueChange($event)"></app-search-input>
+  <app-search-container [searchResult$]="searchResult$" [searchValue]="searchValue"></app-search-container>
+</div>

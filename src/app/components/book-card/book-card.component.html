@@ -1,0 +1,20 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <p (click)="open(content)"><strong>Title: </strong>{{book.volumeInfo.title}}</p>
+    </div>
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">More Details about {{book.volumeInfo.title}}</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.close()">X</button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Subtitle: </strong>{{book.volumeInfo.subtitle}}</p>
+      <p><strong>Publish Date: </strong>{{book.volumeInfo.publishedDate}}</p>
+      <p><strong>Authors: </strong>{{book.volumeInfo.authors}}</p>
+      <app-wishlist-input [book]="book"></app-wishlist-input>
+    </div>
+  </ng-template>
+</div>

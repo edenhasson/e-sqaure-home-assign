@@ -1,0 +1,17 @@
+<app-nav-bar>
+  <a ngbNavLink routerLink="/search">Search</a>
+</app-nav-bar>
+<div *ngIf="wishlistBooks.length else noDataTemplate ">
+  <div *ngFor="let book of wishlistBooks" class="card">
+    <div class="card-body">
+      <h5>{{book.volumeInfo.title}}</h5>
+      <app-wishlist-input [book]="book" (bookRemoved)="updateWishlist()"></app-wishlist-input>
+    </div>
+  </div>
+</div>
+
+<ng-template #noDataTemplate>
+<div>
+  <h3>You didn't add books to your wishlist</h3>
+</div>
+</ng-template>

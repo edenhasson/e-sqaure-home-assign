@@ -1,0 +1,8 @@
+<div *ngIf="(searchResult$ | async) as booksObject">
+  <app-book-card *ngFor="let book of booksObject.items" [book]="book"></app-book-card>
+  <div class="d-flex justify-content-center">
+    <ngb-pagination [page]="(startIndex/maxResults) + 1" [pageSize]="maxResults"
+                    [collectionSize]="booksObject.totalItems" (pageChange)="onPageChange($event)"
+                    [maxSize]="10"></ngb-pagination>
+  </div>
+</div>

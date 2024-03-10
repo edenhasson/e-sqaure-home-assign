@@ -1,0 +1,9 @@
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="username">Username</label>
+      <input type="text" id="username" formControlName="username" class="form-control" placeholder="Enter Username"/>
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem="1" class="m-2">
+    <h5>Greeting {{username}}</h5>
+  </li>
+  <li ngbNavItem="2">
+    <ng-content>
+    </ng-content>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
